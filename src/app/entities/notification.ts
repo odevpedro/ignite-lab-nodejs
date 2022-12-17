@@ -1,32 +1,32 @@
+import { Content } from './content';
+
 export interface NotificationProps {
 
-recipientId: string;
-content: string;
-category: string;
-readAt ?: Date | null;
-createdAt: Date;
-
-
+    recipientId: string;
+    content: Content;
+    category: string;
+    readAt?: Date | null;
+    createdAt: Date;
 }
 
 export class Notification {
 
-    private props: NotificationProps
+  private props: NotificationProps;
 
-    constructor(){
-        this.content = ''
+  constructor(props: NotificationProps) {
+        this.props = props;
     }
 
-    public set content(content: string){
+    public set content(content: Content) {
         this.props.content = content;
     }
 
-    public get content(): string {
+    public get content(): Content {
         return this.props.content;
     }
 
-    
-    public set recipientId(recipientId: string){
+
+    public set recipientId(recipientId: string) {
         this.props.recipientId = recipientId;
     }
 
@@ -34,15 +34,15 @@ export class Notification {
         return this.props.recipientId;
     }
 
-    public set readAt(readAt: Date){
+    public set readAt(readAt: Date) {
         this.props.readAt = readAt;
-    }
+  }
 
-    public get readAt(): Date {
+  public get readAt(): Date {
         return this.props.readAt;
     }
 
-    public set category(category: string){
+    public set category(category: string) {
         this.props.category = category;
     }
 
@@ -50,11 +50,8 @@ export class Notification {
         return this.props.category;
     }
 
-    
+
     public get createdAt(): Date {
         return this.props.createdAt;
     }
-
-
-
 }
