@@ -50,5 +50,11 @@ export class Notification {
         return this.props.category;
     }
 
+    
+    public get createdAt(): Date {
+        return this.props.createdAt;
+    }
+
+
 
 }
